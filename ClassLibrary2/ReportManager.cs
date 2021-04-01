@@ -2,6 +2,7 @@
 using System;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 
 namespace ClassLibrary2
 {
@@ -9,7 +10,8 @@ namespace ClassLibrary2
     {
         public void ExportToExcel()
         {
-            var data = File.ReadLines("C:/Users/asu/Downloads/Test.csv").Skip(1).Select(line => new Report(line)).Select(doc =>
+           
+            var data = File.ReadLines("Test.csv").Skip(1).Select(line => new Report(line)).Select(doc =>
             new
             {
                 doc.RegistrationNumber,
